@@ -1,5 +1,11 @@
 package com.epam.courses.homework.task1;
-
+/*
+Task:
+Напишите консольное приложение, которое определяет целое
+положительное число в десятичной системе, затем преобразует в
+двоичной/восьмиричной/шестнадцатиричной системах счисления и выводит
+результат.
+ */
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
