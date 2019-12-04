@@ -46,7 +46,7 @@ public class Task1_5 {
 
         for (int j = 0; j < inputNumber; j++) {
             for (int i = 0; i < inputNumber; i++) {
-                resultMatrix[j][i] = sourceMatrix[inputNumber-i-1][inputNumber-j-1] ;
+                resultMatrix[i][j] = sourceMatrix[j][inputNumber-i-1] ;
 
             }
         }
