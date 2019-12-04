@@ -29,7 +29,7 @@ public class Task1_3 {
                 return;
             }
 
-            System.out.println(pyramidBuilder(inputNumber));
+            pyramidBuilder(inputNumber);
 
         }catch (InputMismatchException e){
             System.err.println("Entered value is unsupported");
@@ -37,18 +37,20 @@ public class Task1_3 {
 
     }
 
-    private static String pyramidBuilder(int height){
-        StringBuilder builder = new StringBuilder();
+    private static void pyramidBuilder(int height){
+        String result = "";
 
-        for (int i = 1; i <= height; i++){           //строки, i - текущий "этаж" сверху, height - высота итоговой пирамиды
-            for (int j = 1; j <= i; j++){            //столбцы
-                if (height-i > j) {
-                    builder.append("x");
-                }
-
+        for(int i = 1; i <= height; i++){
+            for (int j = height-i; j > 0; j--) {
+                System.out.print(" ");
             }
-            builder.append("y\n");                    //переход на следующую строку после отработки всех столбцов предидущей
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            for (int j = i-1; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
         }
-        return builder.toString();
     }
 }
