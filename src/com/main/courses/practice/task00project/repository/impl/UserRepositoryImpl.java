@@ -17,10 +17,8 @@ public class UserRepositoryImpl implements UserRepository {
             if (!users.containsKey(entity.getId())) {
                 users.put(entity.getId(), entity);
             } else {
-                throw new IllegalArgumentException("Cant found user with same id");
+                throw new IllegalArgumentException("Err");
             }
-        } else {
-            throw new IllegalArgumentException("Err NullUser");
         }
     }
 
@@ -34,7 +32,7 @@ public class UserRepositoryImpl implements UserRepository {
         if (id != null) {
             return users.get(id);
         } else {
-            throw new IllegalArgumentException("Err NullID");
+            throw new IllegalArgumentException("Err");
         }
     }
 
@@ -44,10 +42,8 @@ public class UserRepositoryImpl implements UserRepository {
             if (users.containsKey(entity.getId())) {
                 users.put(entity.getId(), entity);
             } else {
-                throw new IllegalArgumentException("Cant found user with same id");
+                throw new IllegalArgumentException("Err");
             }
-        } else {
-            throw new IllegalArgumentException("Err NullUser");
         }
     }
 
@@ -56,7 +52,7 @@ public class UserRepositoryImpl implements UserRepository {
         if (id != null) {
             users.remove(id);
         } else {
-            throw new IllegalArgumentException("Err NullID");
+            throw new IllegalArgumentException("Err");
         }
     }
 
