@@ -1,0 +1,17 @@
+package courses.practice.lesson02;
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new A(100);
+
+        final B b = new B("Descr.",a);
+        System.out.println(b);
+        a.setCode(200);
+        System.out.println(b);
+
+        final A a1 = b.getA();
+        a1.setCode(300);
+        System.out.println(b);
+
+    }
+}
