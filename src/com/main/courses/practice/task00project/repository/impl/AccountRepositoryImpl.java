@@ -16,10 +16,10 @@ public class AccountRepositoryImpl implements AccountRepository {private final M
             if (!accountIdToAccount.containsKey(entity.getId())) {
                 accountIdToAccount.put(entity.getId(), entity);
             } else {
-                throw new IllegalArgumentException("There is no user with the same id");
+                throw new IllegalArgumentException("Cant found user with same id");
             }
         } else {
-            throw new IllegalArgumentException("User is null");
+            throw new IllegalArgumentException("Err NullUser");
         }
     }
 
@@ -28,7 +28,7 @@ public class AccountRepositoryImpl implements AccountRepository {private final M
         if (id != null) {
             return accountIdToAccount.get(id);
         } else {
-            throw new IllegalArgumentException("Id is null");
+            throw new IllegalArgumentException("Err NullId");
         }
     }
 
@@ -43,10 +43,10 @@ public class AccountRepositoryImpl implements AccountRepository {private final M
             if (accountIdToAccount.containsKey(entity.getId())) {
                 accountIdToAccount.put(entity.getId(), entity);
             } else {
-                throw new IllegalArgumentException("There is no user with the same id");
+                throw new IllegalArgumentException("Cant found user with same id");
             }
         } else {
-            throw new IllegalArgumentException("User is null");
+            throw new IllegalArgumentException("Err NullUser");
         }
     }
 

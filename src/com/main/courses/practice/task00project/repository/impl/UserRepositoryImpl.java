@@ -12,20 +12,15 @@ public class UserRepositoryImpl implements UserRepository {
     private final Map<Integer, User> userIdToUser = new HashMap<>();
 
     @Override
-    public User findByEmail(String email) {
-        return userIdToUser.values().stream().filter(o -> o.getEmail().equals(email)).findFirst().orElse(null);
-    }
-
-    @Override
     public void save(User entity) {
         if (entity != null) {
             if (!userIdToUser.containsKey(entity.getId())) {
                 userIdToUser.put(entity.getId(), entity);
             } else {
-                throw new IllegalArgumentException("There is no user with the same id");
+                throw new IllegalArgumentException("Cant found user with same id");
             }
         } else {
-            throw new IllegalArgumentException("User is null");
+            throw new IllegalArgumentException("Err NullUser");
         }
     }
 
@@ -34,7 +29,7 @@ public class UserRepositoryImpl implements UserRepository {
         if (id != null) {
             return userIdToUser.get(id);
         } else {
-            throw new IllegalArgumentException("Id is null");
+            throw new IllegalArgumentException("Err NullID");
         }
     }
 
@@ -49,10 +44,10 @@ public class UserRepositoryImpl implements UserRepository {
             if (userIdToUser.containsKey(entity.getId())) {
                 userIdToUser.put(entity.getId(), entity);
             } else {
-                throw new IllegalArgumentException("There is no user with the same id");
+                throw new IllegalArgumentException("Cant found user with same id");
             }
         } else {
-            throw new IllegalArgumentException("User is null");
+            throw new IllegalArgumentException("Err NullUser");
         }
     }
 
@@ -61,7 +56,14 @@ public class UserRepositoryImpl implements UserRepository {
         if (id != null) {
             userIdToUser.remove(id);
         } else {
-            throw new IllegalArgumentException("Id null");
+            throw new IllegalArgumentException("Err NullID");
         }
     }
+
+    @Override
+    public User findByEmail(String email) {
+        return userIdToUser.values().stream().filter(o -> o.getEmail().equals(email)).findFirst().orElse(null);
+    }
+
+
 }
